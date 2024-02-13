@@ -36,18 +36,20 @@ struct AuthorizationView: View {
     }
     
     private func entryAccount() {
-        //        let loginData = LoginData(login: email, password: password)
-        //        APIManager.shared.login(loginData: loginData) { result in
-        //            switch result {
-        //            case .success(let authResponse):
-        //                print("Login successful, token: \(authResponse.token)")
-        //                isButtonPressed = true
-        //            case .failure(let error):
-        //                print("Login failed with error: \(error)")
-        //            }
-        //        }
+        let loginData = LoginData(login: email, password: password)
         
-        isButtonPressed = true
+        APIManager.shared.login(loginData: loginData) { result in
+            switch result {
+            case .success(let authResponse):
+                print("Login successful, token: \(authResponse.token)")
+                isButtonPressed = true
+                
+            case .failure(let error):
+                print("Login failed with error: \(error)")
+            }
+        }
+        
+//        isButtonPressed = true
     }
 }
 

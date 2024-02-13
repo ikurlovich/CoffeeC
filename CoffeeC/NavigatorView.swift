@@ -17,9 +17,8 @@ struct NavigatorView: View {
             AuthorizationView()
                 .navigationTitle("Вход")
                 .toolbarTitleDisplayMode(.inline)
-            
         }
-        .navigationViewStyle(StackNavigationViewStyle())
+        .navigationViewStyle(.stack)
     }
 }
 
