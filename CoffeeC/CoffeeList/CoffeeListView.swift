@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct CoffeeListView: View {
+    @StateObject var vm = CoffeeCViewModel()
+    
     @State private var isButtonPressed = false
     @State private var isShowMenu = false
-    @StateObject var vm = CoffeeCViewModel()
     
     var body: some View {
         VStack {
@@ -25,18 +26,27 @@ struct CoffeeListView: View {
                         }
                 }
             }
-            UniversalButtonUI(buttonText: "На карте", buttonAction: { goToNextPage() })
-                .padding(.horizontal, 20)
-        }
-        .arrowToolBarUI(name: "Ближайшие кофейни")
-        .navigationDestination(
-            isPresented: $isButtonPressed) {
-                if isShowMenu {
-                    CoffeeMenuView()
-                } else {
-                    CoffeeMapView()
+            
+            UniversalButtonUI("На карте") {
+                goToNextPage()
+            }
+            .padding(.horizontal, 20)
+            
+            UniversalButtonUI("Выйти") {
+                withAnimation {
+                    NavigatorView().token = ""
                 }
             }
+            .padding(.horizontal, 20)
+        }
+        .arrowToolBarUI(name: "Ближайшие кофейни")
+        .navigationDestination(isPresented: $isButtonPressed) {
+            if isShowMenu {
+                CoffeeMenuView()
+            } else {
+                CoffeeMapView()
+            }
+        }
     }
     
     private func goToMenu() {

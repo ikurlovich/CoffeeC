@@ -10,6 +10,11 @@ import SwiftUI
 struct UniversalButtonUI: View {
     var buttonText: String
     var buttonAction: () -> Void
+    
+    init(_ buttonText: String, buttonAction: @escaping () -> Void) {
+        self.buttonText = buttonText
+        self.buttonAction = buttonAction
+    }
 
     var body: some View {
         VStack {
@@ -18,7 +23,7 @@ struct UniversalButtonUI: View {
                     Rectangle()
                         .foregroundStyle(.button)
                         .frame(height: 55)
-                        .clipShape(Capsule())
+                        .clipShape(.capsule)
                     
                     Text(buttonText)
                         .font(.title3)
@@ -32,8 +37,7 @@ struct UniversalButtonUI: View {
 }
 
 #Preview {
-    UniversalButtonUI(buttonText: "Пример") {
+    UniversalButtonUI("Пример") {
         print("Registration done")
     }
 }
-

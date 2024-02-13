@@ -17,7 +17,10 @@ struct RegistrationView: View {
             EmailUI(email: $email)
             PasswordUI(password: $password, name: "Пароль")
             PasswordUI(password: $repeatPassword, name: "Повторите пароль")
-            UniversalButtonUI(buttonText: "Регистрация", buttonAction: { regAccount() })
+            
+            UniversalButtonUI("Регистрация") {
+                regAccount()
+            }
         }
         .padding(.horizontal, 20)
         .arrowToolBarUI(name: "Регистрация")
@@ -38,8 +41,6 @@ struct RegistrationView: View {
             print("Passwords do not match")
         }
     }
-
-    
 }
 
 #Preview {
@@ -47,5 +48,3 @@ struct RegistrationView: View {
         RegistrationView()
     }
 }
-
-

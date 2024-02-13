@@ -15,32 +15,44 @@ struct AuthorizationView: View {
     var body: some View {
         VStack(spacing: 20) {
             EmailUI(email: $email)
+            
             PasswordUI(password: $password, name: "Пароль")
-            UniversalButtonUI(buttonText: "Войти", buttonAction: { entryAccount() })
-            NavigationLink(destination: RegistrationView()) {
+            
+            UniversalButtonUI("Войти") {
+                entryAccount()
+            }
+            
+            NavigationLink {
+                RegistrationView()
+            } label: {
                 Text("Зарегистрироваться")
                     .foregroundStyle(.accent)
             }
         }
         .padding(.horizontal, 20)
-        .navigationDestination(
-            isPresented: $isButtonPressed) {
-                CoffeeListView()
-            }
+        .navigationDestination(isPresented: $isButtonPressed) {
+            CoffeeListView()
+        }
     }
     
     private func entryAccount() {
-//        let loginData = LoginData(login: email, password: password)
-//        APIManager.shared.login(loginData: loginData) { result in
-//            switch result {
-//            case .success(let authResponse):
-//                print("Login successful, token: \(authResponse.token)")
+        let loginData = LoginData(login: email, password: password)
+        
+        APIManager.shared.login(loginData: loginData) { result in
+            switch result {
+            case .success(let authResponse):
+                print("Login successful, token: \(authResponse.token)")
 //                isButtonPressed = true
-//            case .failure(let error):
-//                print("Login failed with error: \(error)")
-//            }
-//        }
-        isButtonPressed = true
+                withAnimation {
+                    NavigatorView().token = authResponse.token
+                }
+                
+            case .failure(let error):
+                print("Login failed with error: \(error)")
+            }
+        }
+        
+//        isButtonPressed = true
     }
 }
 
