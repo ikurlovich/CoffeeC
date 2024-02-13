@@ -25,12 +25,7 @@ public extension URLRequest {
         self.setValue("application/json", forHTTPHeaderField: "Accept")
         self.setValue("application/json", forHTTPHeaderField: "Content-Type")
         self.setValue("BisquitAPPLE", forHTTPHeaderField: "User-Agent")
-        
-//        if let apiKey = Keychain.load(key: "selectedApiKey") {
         self.setValue("Bearer \(NavigatorView().token)", forHTTPHeaderField: "Authorization")
-//        } else {
-//            print("Error fetching value from Keychain")
-//        }
         
         if let body {
             do {

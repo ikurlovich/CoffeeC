@@ -1,10 +1,3 @@
-//
-//  CoffeeMenuView.swift
-//  CoffeeC
-//
-//  Created by Илья Курлович on 12.02.2024.
-//
-
 import SwiftUI
 
 struct CoffeeMenuView: View {
@@ -33,7 +26,7 @@ struct CoffeeMenuView: View {
                             AsyncImage(url: URL(string: coffee.imageURL)) { image in
                                 image
                                     .resizable()
-                                    .scaledToFill()
+                                    .scaledToFit()
                             } placeholder: {
                                 ProgressView()
                             }

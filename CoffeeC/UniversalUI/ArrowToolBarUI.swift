@@ -1,10 +1,3 @@
-//
-//  ArrowToolBarUI.swift
-//  CoffeeC
-//
-//  Created by Илья Курлович on 11.02.2024.
-//
-
 import SwiftUI
 
 struct ArrowToolBarUI: ViewModifier {

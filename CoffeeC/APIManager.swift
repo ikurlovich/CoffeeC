@@ -1,10 +1,3 @@
-//
-//  APIManager.swift
-//  CoffeeC
-//
-//  Created by Илья Курлович on 11.02.2024.
-//
-
 import Foundation
 import Alamofire
 
@@ -85,18 +78,4 @@ final class APIManager {
         }
         .resume()
     }
-    
-    //    func getLocations(completion: @escaping (Result<[LocationRespond], Error>) -> Void) {
-    //        let url = "\(baseURL)/locations"
-    //
-    //        AF.request(url).responseDecodable(of: [LocationRespond].self) { response in
-    //            switch response.result {
-    //            case .success(let locationRespond):
-    //                completion(.success(locationRespond))
-    //
-    //            case .failure(let error):
-    //                completion(.failure(error))
-    //            }
-    //        }
-    //    }
 }

@@ -1,10 +1,3 @@
-//
-//  PasswordUI.swift
-//  CoffeeC
-//
-//  Created by Илья Курлович on 10.02.2024.
-//
-
 import SwiftUI
 
 struct PasswordUI: View {

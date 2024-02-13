@@ -1,10 +1,3 @@
-//
-//  UINavigationBar_Ex.swift
-//  CoffeeC
-//
-//  Created by Илья Курлович on 09.02.2024.
-//
-
 import SwiftUI
 
 extension UINavigationBar {

@@ -1,10 +1,3 @@
-//
-//  BuyListItem.swift
-//  CoffeeC
-//
-//  Created by Илья Курлович on 13.02.2024.
-//
-
 import SwiftUI
 
 struct BuyListItemUI: View {

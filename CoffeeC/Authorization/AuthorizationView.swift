@@ -1,10 +1,3 @@
-//
-//  AuthorizationView.swift
-//  CoffeeC
-//
-//  Created by Илья Курлович on 10.02.2024.
-//
-
 import SwiftUI
 
 struct AuthorizationView: View {
@@ -42,7 +35,6 @@ struct AuthorizationView: View {
             switch result {
             case .success(let authResponse):
                 print("Login successful, token: \(authResponse.token)")
-//                isButtonPressed = true
                 withAnimation {
                     NavigatorView().token = authResponse.token
                 }
@@ -51,8 +43,6 @@ struct AuthorizationView: View {
                 print("Login failed with error: \(error)")
             }
         }
-        
-//        isButtonPressed = true
     }
 }
 
