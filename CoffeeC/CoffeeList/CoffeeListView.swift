@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CoffeeListView: View {
-    @StateObject var vm = CoffeeCViewModel()
+    @StateObject var vm = CoffeeVM()
     
     @State private var isButtonPressed = false
     @State private var isShowMenu = false

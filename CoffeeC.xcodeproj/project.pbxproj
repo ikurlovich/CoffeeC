@@ -20,7 +20,7 @@
 		593C184A2B77F26B002097CA /* EmailUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593C18492B77F26B002097CA /* EmailUI.swift */; };
 		5978092C2B7920D000E72D8D /* CoffeeListItemUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5978092B2B7920D000E72D8D /* CoffeeListItemUI.swift */; };
 		5978092E2B79240900E72D8D /* CoffeeMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5978092D2B79240900E72D8D /* CoffeeMapView.swift */; };
-		597809312B792C7500E72D8D /* CoffeeCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597809302B792C7500E72D8D /* CoffeeCViewModel.swift */; };
+		597809312B792C7500E72D8D /* CoffeeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597809302B792C7500E72D8D /* CoffeeVM.swift */; };
 		59AE0B792B7818B800108522 /* ArrowToolBarUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AE0B782B7818B800108522 /* ArrowToolBarUI.swift */; };
 		59AE0B7B2B781F3E00108522 /* UniversalButtonUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AE0B7A2B781F3E00108522 /* UniversalButtonUI.swift */; };
 		59AE0B7E2B7825CA00108522 /* CoffeeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AE0B7D2B7825CA00108522 /* CoffeeListView.swift */; };
@@ -51,7 +51,7 @@
 		5978092A2B78EAA300E72D8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		5978092B2B7920D000E72D8D /* CoffeeListItemUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeListItemUI.swift; sourceTree = "<group>"; };
 		5978092D2B79240900E72D8D /* CoffeeMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeMapView.swift; sourceTree = "<group>"; };
-		597809302B792C7500E72D8D /* CoffeeCViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeCViewModel.swift; sourceTree = "<group>"; };
+		597809302B792C7500E72D8D /* CoffeeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeVM.swift; sourceTree = "<group>"; };
 		59AE0B782B7818B800108522 /* ArrowToolBarUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrowToolBarUI.swift; sourceTree = "<group>"; };
 		59AE0B7A2B781F3E00108522 /* UniversalButtonUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalButtonUI.swift; sourceTree = "<group>"; };
 		59AE0B7D2B7825CA00108522 /* CoffeeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeListView.swift; sourceTree = "<group>"; };
@@ -166,7 +166,7 @@
 		5978092F2B792C4A00E72D8D /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				597809302B792C7500E72D8D /* CoffeeCViewModel.swift */,
+				597809302B792C7500E72D8D /* CoffeeVM.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -281,7 +281,7 @@
 				59AE0B8D2B78DE3C00108522 /* LocationRespond.swift in Sources */,
 				59AE0B792B7818B800108522 /* ArrowToolBarUI.swift in Sources */,
 				590DA3642B7ACA39006BD586 /* CoffeePayView.swift in Sources */,
-				597809312B792C7500E72D8D /* CoffeeCViewModel.swift in Sources */,
+				597809312B792C7500E72D8D /* CoffeeVM.swift in Sources */,
 				593C18392B76746D002097CA /* RegistrationView.swift in Sources */,
 				593C18412B77C063002097CA /* AuthorizationView.swift in Sources */,
 				59AE0B7B2B781F3E00108522 /* UniversalButtonUI.swift in Sources */,

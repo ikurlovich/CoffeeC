@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class CoffeeCViewModel: ObservableObject {
+final class CoffeeVM: ObservableObject {
     @Published var coffeeShopsMock: [LocationRespond] = [
         LocationRespond(id: 1, name: "BEDOEV COFFEE", point: Point(latitude: 44.71, longitude: 37.76)),
         LocationRespond(id: 2, name: "Coffee Like", point: Point(latitude: 44.70, longitude: 37.777)),

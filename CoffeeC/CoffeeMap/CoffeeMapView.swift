@@ -9,7 +9,7 @@ import SwiftUI
 import MapKit
 
 struct CoffeeMapView: View {
-    @StateObject var vm = CoffeeCViewModel()
+    @StateObject var vm = CoffeeVM()
     
     @State private var cameraPosition: MapCameraPosition = .region(.userRegion)
     @State private var isButtonPressed = false

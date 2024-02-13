@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CoffeePayView: View {
-    @ObservedObject var vm: CoffeeCViewModel
+    @ObservedObject var vm: CoffeeVM
     
     @State private var showsAlert = false
     @State private var alertTitle = ""
@@ -66,7 +66,7 @@ struct CoffeePayView: View {
 
 #Preview {
     NavigationStack {
-        let viewModel = CoffeeCViewModel()
+        let viewModel = CoffeeVM()
         CoffeePayView(vm: viewModel)
     }
 }
