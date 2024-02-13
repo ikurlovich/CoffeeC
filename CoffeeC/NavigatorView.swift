@@ -12,11 +12,17 @@ struct NavigatorView: View {
         UINavigationBar.customize()
     }
     
+    @AppStorage("token") var token = ""
+    
     var body: some View {
         NavigationStack {
-            AuthorizationView()
-                .navigationTitle("Вход")
-                .toolbarTitleDisplayMode(.inline)
+            if token.isEmpty {
+                AuthorizationView()
+                    .navigationTitle("Вход")
+                    .toolbarTitleDisplayMode(.inline)
+            } else {
+                CoffeeListView()
+            }
         }
         .navigationViewStyle(.stack)
     }

@@ -90,7 +90,7 @@ struct CoffeeMenuView: View {
                 .padding()
             }
             
-            UniversalButtonUI(buttonText: "Перейти к оплате") {
+            UniversalButtonUI("Перейти к оплате") {
                 goToNextPage()
             }
             .padding(.horizontal, 20)

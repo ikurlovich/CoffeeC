@@ -17,7 +17,8 @@ struct RegistrationView: View {
             EmailUI(email: $email)
             PasswordUI(password: $password, name: "Пароль")
             PasswordUI(password: $repeatPassword, name: "Повторите пароль")
-            UniversalButtonUI(buttonText: "Регистрация") {
+            
+            UniversalButtonUI("Регистрация") {
                 regAccount()
             }
         }

@@ -33,7 +33,7 @@ struct CoffeePayView: View {
                 }
             }
             
-            UniversalButtonUI(buttonText: "Оплатить", buttonAction: makeOrder)
+            UniversalButtonUI("Оплатить", buttonAction: makeOrder)
                 .padding(.horizontal, 20)
         }
         .arrowToolBarUI(name: "Меню")

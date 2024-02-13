@@ -18,7 +18,7 @@ struct AuthorizationView: View {
             
             PasswordUI(password: $password, name: "Пароль")
             
-            UniversalButtonUI(buttonText: "Войти") {
+            UniversalButtonUI("Войти") {
                 entryAccount()
             }
             
@@ -42,7 +42,10 @@ struct AuthorizationView: View {
             switch result {
             case .success(let authResponse):
                 print("Login successful, token: \(authResponse.token)")
-                isButtonPressed = true
+//                isButtonPressed = true
+                withAnimation {
+                    NavigatorView().token = authResponse.token
+                }
                 
             case .failure(let error):
                 print("Login failed with error: \(error)")

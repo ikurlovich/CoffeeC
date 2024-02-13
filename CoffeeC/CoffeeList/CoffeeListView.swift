@@ -26,8 +26,16 @@ struct CoffeeListView: View {
                         }
                 }
             }
-            UniversalButtonUI(buttonText: "На карте") {
+            
+            UniversalButtonUI("На карте") {
                 goToNextPage()
+            }
+            .padding(.horizontal, 20)
+            
+            UniversalButtonUI("Выйти") {
+                withAnimation {
+                    NavigatorView().token = ""
+                }
             }
             .padding(.horizontal, 20)
         }
