@@ -15,6 +15,7 @@ struct EmailUI: View {
             HStack {
                 Text("e-mail")
                     .foregroundStyle(.accent)
+                
                 Spacer()
             }
             
@@ -22,9 +23,11 @@ struct EmailUI: View {
                 TextField("example@example", text: $email)
                     .padding()
                     .foregroundStyle(.accent)
+                    .textContentType(.emailAddress)
+                    .keyboardType(.emailAddress)
                     .overlay(
                         RoundedRectangle(cornerRadius: 30)
-                            .stroke(Color.accent, lineWidth: 2)
+                            .stroke(.accent, lineWidth: 2)
                     )
             }
         }
@@ -32,5 +35,5 @@ struct EmailUI: View {
 }
 
 #Preview {
-    EmailUI(email: Binding.constant(""))
+    EmailUI(email: .constant(""))
 }

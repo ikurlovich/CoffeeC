@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CoffeeMenuView: View {
     @StateObject var vm = CoffeeCViewModel()
+    
     @State private var isButtonPressed = false
     @State private var numberOfCups = 0
     
@@ -82,21 +83,24 @@ struct CoffeeMenuView: View {
                                 }
                             }
                         }
-                        .clipShape(RoundedRectangle(cornerRadius: 15))
+                        .clipShape(.rect(cornerRadius: 15))
                         .shadow(color: .shadow, radius: 2, x: 0.0, y: 3)
                     }
                 }
                 .padding()
             }
-            UniversalButtonUI(buttonText: "Перейти к оплате", buttonAction: { goToNextPage() })
-                .padding(.horizontal, 20)
+            
+            UniversalButtonUI(buttonText: "Перейти к оплате") {
+                goToNextPage()
+            }
+            .padding(.horizontal, 20)
         }
         .arrowToolBarUI(name: "Меню")
-        .navigationDestination(
-            isPresented: $isButtonPressed) {
-                CoffeePayView(vm: vm)
-            }
+        .navigationDestination(isPresented: $isButtonPressed) {
+            CoffeePayView(vm: vm)
+        }
     }
+    
     private func goToNextPage() {
         isButtonPressed = true
     }

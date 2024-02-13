@@ -18,7 +18,7 @@ struct UniversalButtonUI: View {
                     Rectangle()
                         .foregroundStyle(.button)
                         .frame(height: 55)
-                        .clipShape(Capsule())
+                        .clipShape(.capsule)
                     
                     Text(buttonText)
                         .font(.title3)
@@ -36,4 +36,3 @@ struct UniversalButtonUI: View {
         print("Registration done")
     }
 }
-

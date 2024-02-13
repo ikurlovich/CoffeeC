@@ -25,7 +25,7 @@ struct PasswordUI: View {
                     .foregroundStyle(.accent)
                     .overlay(
                         RoundedRectangle(cornerRadius: 30)
-                            .stroke(Color.accent, lineWidth: 2)
+                            .stroke(.accent, lineWidth: 2)
                     )
             }
         }
@@ -33,5 +33,5 @@ struct PasswordUI: View {
 }
 
 #Preview {
-    PasswordUI(password: Binding.constant(""), name: "Пример")
+    PasswordUI(password: .constant(""), name: "Пример")
 }

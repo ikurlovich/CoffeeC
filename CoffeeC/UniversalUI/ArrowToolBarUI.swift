@@ -29,9 +29,9 @@ struct ArrowToolBarUI: ViewModifier {
             .navigationBarBackButtonHidden(true)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
-                    Button(action: {
-                        self.presentationMode.wrappedValue.dismiss()
-                    }) {
+                    Button {
+                        presentationMode.wrappedValue.dismiss()
+                    } label: {
                         Image(systemName: "chevron.backward")
                             .resizable()
                             .frame(width: 8, height: 12)

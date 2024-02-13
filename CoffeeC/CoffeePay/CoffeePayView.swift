@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CoffeePayView: View {
     @ObservedObject var vm: CoffeeCViewModel
+    
     @State private var showsAlert = false
     @State private var alertTitle = ""
     @State private var alertMessage = ""
@@ -31,6 +32,7 @@ struct CoffeePayView: View {
                     }
                 }
             }
+            
             UniversalButtonUI(buttonText: "Оплатить", buttonAction: makeOrder)
                 .padding(.horizontal, 20)
         }
@@ -49,6 +51,7 @@ struct CoffeePayView: View {
             let count = vm.coffeeOrderCount[coffee.name, default: 0]
             return sum + Int(coffee.price * Int32(count))
         }
+        
         if total > 0 {
             alertTitle = "Покупка совершена успешно"
             alertMessage = "Ваша общая сумма заказа составляет \(total) руб."
@@ -56,7 +59,8 @@ struct CoffeePayView: View {
             alertTitle = "Вы не выбрали товар"
             alertMessage = "Пожалуйста, выберите напиток для заказа"
         }
-        self.showsAlert = true
+        
+        showsAlert = true
     }
 }
 

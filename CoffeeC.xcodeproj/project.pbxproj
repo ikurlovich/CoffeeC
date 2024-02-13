@@ -13,7 +13,6 @@
 		593C18252B76726A002097CA /* CoffeeCApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593C18242B76726A002097CA /* CoffeeCApp.swift */; };
 		593C18272B76726A002097CA /* NavigatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593C18262B76726A002097CA /* NavigatorView.swift */; };
 		593C18292B76726D002097CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 593C18282B76726D002097CA /* Assets.xcassets */; };
-		593C182C2B76726D002097CA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 593C182B2B76726D002097CA /* Preview Assets.xcassets */; };
 		593C18392B76746D002097CA /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593C18382B76746D002097CA /* RegistrationView.swift */; };
 		593C183C2B767C2E002097CA /* UINavigationBar_Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593C183B2B767C2E002097CA /* UINavigationBar_Ex.swift */; };
 		593C18412B77C063002097CA /* AuthorizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593C18402B77C063002097CA /* AuthorizationView.swift */; };
@@ -44,7 +43,6 @@
 		593C18242B76726A002097CA /* CoffeeCApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeCApp.swift; sourceTree = "<group>"; };
 		593C18262B76726A002097CA /* NavigatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigatorView.swift; sourceTree = "<group>"; };
 		593C18282B76726D002097CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		593C182B2B76726D002097CA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		593C18382B76746D002097CA /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		593C183B2B767C2E002097CA /* UINavigationBar_Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationBar_Ex.swift; sourceTree = "<group>"; };
 		593C18402B77C063002097CA /* AuthorizationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationView.swift; sourceTree = "<group>"; };
@@ -112,17 +110,8 @@
 				59AE0B7C2B78228100108522 /* UniversalUI */,
 				593C183A2B767B9B002097CA /* Extension */,
 				593C18282B76726D002097CA /* Assets.xcassets */,
-				593C182A2B76726D002097CA /* Preview Content */,
 			);
 			path = CoffeeC;
-			sourceTree = "<group>";
-		};
-		593C182A2B76726D002097CA /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				593C182B2B76726D002097CA /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		593C18332B7672D2002097CA /* Authorization */ = {
@@ -273,7 +262,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				593C182C2B76726D002097CA /* Preview Assets.xcassets in Resources */,
 				593C18292B76726D002097CA /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -441,7 +429,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"CoffeeC/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 8Q8855SSVY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -477,7 +465,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"CoffeeC/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 8Q8855SSVY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;

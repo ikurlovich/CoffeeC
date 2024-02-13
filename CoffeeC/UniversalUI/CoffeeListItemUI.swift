@@ -16,7 +16,7 @@ struct CoffeeListItemUI: View {
             Rectangle()
                 .frame(height: 90)
                 .foregroundStyle(.coffeeList)
-                .clipShape(RoundedRectangle(cornerSize: CGSize(width: 5, height: 5)))
+                .clipShape(.rect(cornerSize: .init(width: 5, height: 5)))
                 .shadow(color: .shadow, radius: 2, x: 0.0, y: 3)
                 .padding(.horizontal)
             
@@ -26,6 +26,7 @@ struct CoffeeListItemUI: View {
                         .foregroundStyle(.accent)
                         .font(.title2)
                         .fontWeight(.bold)
+                    
                     Text(distance)
                         .foregroundStyle(.brown)
                 }
