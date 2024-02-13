@@ -39,6 +39,12 @@ struct CoffeeListView: View {
             }
             .padding(.horizontal, 20)
         }
+        .task {
+            vm.getLocations()
+        }
+        .refreshable {
+            vm.getLocations()
+        }
         .arrowToolBarUI(name: "Ближайшие кофейни")
         .navigationDestination(isPresented: $isButtonPressed) {
             if isShowMenu {

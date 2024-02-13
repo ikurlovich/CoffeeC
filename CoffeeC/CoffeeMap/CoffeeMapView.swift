@@ -16,25 +16,25 @@ struct CoffeeMapView: View {
     
     var body: some View {
         VStack {
-            Map(position: $cameraPosition) {
-                UserAnnotation()
-                
-                ForEach(vm.coffeeShopsMock) { coffee in
-                    Annotation("", coordinate: .init(latitude: coffee.point.latitude, longitude: coffee.point.longitude)) {
-                        
-                        VStack {
-                            Image("coffeeMarker")
-                            
-                            Text(coffee.name)
-                                .fontWeight(.bold)
-                                .foregroundStyle(.mapText)
-                        }
-                        .onTapGesture {
-                            tapToMarker()
-                        }
-                    }
-                }
-            }
+//            Map(position: $cameraPosition) {
+//                UserAnnotation()
+//                
+//                ForEach(vm.coffeeShopsMock) { coffee in
+//                    Annotation("", coordinate: .init(latitude: coffee.point.latitude, longitude: coffee.point.longitude)) {
+//                        
+//                        VStack {
+//                            Image("coffeeMarker")
+//                            
+//                            Text(coffee.name)
+//                                .fontWeight(.bold)
+//                                .foregroundStyle(.mapText)
+//                        }
+//                        .onTapGesture {
+//                            tapToMarker()
+//                        }
+//                    }
+//                }
+//            }
         }
         .arrowToolBarUI(name: "Карта")
         .navigationDestination(isPresented: $isButtonPressed) {

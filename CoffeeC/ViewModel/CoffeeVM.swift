@@ -8,13 +8,15 @@
 import Foundation
 
 final class CoffeeVM: ObservableObject {
-    @Published var coffeeShopsMock: [LocationRespond] = [
-        LocationRespond(id: 1, name: "BEDOEV COFFEE", point: Point(latitude: 44.71, longitude: 37.76)),
-        LocationRespond(id: 2, name: "Coffee Like", point: Point(latitude: 44.70, longitude: 37.777)),
-        LocationRespond(id: 3, name: "EM&DI Coffee and Snacks", point: Point(latitude: 44.693, longitude: 37.765)),
-        LocationRespond(id: 4, name: "Коффе есть", point: Point(latitude: 44.685, longitude: 37.777)),
-        LocationRespond(id: 5, name: "Набоков", point: Point(latitude: 44.68, longitude: 37.76))
-    ]
+    @Published var coffeeShopsMock: [LocationRespond] = []
+    
+    //    @Published var coffeeShopsMock: [LocationRespond] = [
+    //        LocationRespond(id: 1, name: "BEDOEV COFFEE", point: Point(latitude: 44.71, longitude: 37.76)),
+    //        LocationRespond(id: 2, name: "Coffee Like", point: Point(latitude: 44.70, longitude: 37.777)),
+    //        LocationRespond(id: 3, name: "EM&DI Coffee and Snacks", point: Point(latitude: 44.693, longitude: 37.765)),
+    //        LocationRespond(id: 4, name: "Коффе есть", point: Point(latitude: 44.685, longitude: 37.777)),
+    //        LocationRespond(id: 5, name: "Набоков", point: Point(latitude: 44.68, longitude: 37.76))
+    //    ]
     
     @Published var coffeeMenuMock: [LocationMenuRespond] = [
         LocationMenuRespond(id: 1, name: "Эспрессо", imageURL: "espresso", price: 130),
@@ -41,5 +43,19 @@ final class CoffeeVM: ObservableObject {
     func removeCoffeeFromOrder(coffeeName: String) {
         let currentCount = coffeeOrderCount[coffeeName, default: 0]
         coffeeOrderCount[coffeeName] = max(currentCount - 1, 0)
+    }
+    
+    func getLocations() {
+        APIManager().getLocations(printResponse: true) { result in
+            switch result {
+            case .success(let model):
+                if let model {
+                    self.coffeeShopsMock = model
+                }
+                
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
 }

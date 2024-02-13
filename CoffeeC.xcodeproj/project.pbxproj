@@ -33,6 +33,10 @@
 		59AE0B8F2B78DEB800108522 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AE0B8E2B78DEB800108522 /* MockData.swift */; };
 		59AE0B912B78E3C300108522 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AE0B902B78E3C300108522 /* APIManager.swift */; };
 		59AE0B942B78E3EE00108522 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 59AE0B932B78E3EE00108522 /* Alamofire */; };
+		F3BA700A2B7BC74C00015711 /* Process Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BA70092B7BC74C00015711 /* Process Response.swift */; };
+		F3BA700C2B7BC78400015711 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BA700B2B7BC78400015711 /* Errors.swift */; };
+		F3BA700E2B7BC80400015711 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BA700D2B7BC80400015711 /* Request.swift */; };
+		F3BA70102B7BC99E00015711 /* Pretty JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BA700F2B7BC99E00015711 /* Pretty JSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +67,10 @@
 		59AE0B8C2B78DE3C00108522 /* LocationRespond.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationRespond.swift; sourceTree = "<group>"; };
 		59AE0B8E2B78DEB800108522 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 		59AE0B902B78E3C300108522 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		F3BA70092B7BC74C00015711 /* Process Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Process Response.swift"; sourceTree = "<group>"; };
+		F3BA700B2B7BC78400015711 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		F3BA700D2B7BC80400015711 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		F3BA700F2B7BC99E00015711 /* Pretty JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pretty JSON.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +88,7 @@
 		593C18182B76726A002097CA = {
 			isa = PBXGroup;
 			children = (
+				F3BA700F2B7BC99E00015711 /* Pretty JSON.swift */,
 				593C18232B76726A002097CA /* CoffeeC */,
 				593C18222B76726A002097CA /* Products */,
 			);
@@ -99,6 +108,7 @@
 				5978092A2B78EAA300E72D8D /* Info.plist */,
 				593C18242B76726A002097CA /* CoffeeCApp.swift */,
 				59AE0B902B78E3C300108522 /* APIManager.swift */,
+				F3BA700D2B7BC80400015711 /* Request.swift */,
 				593C18262B76726A002097CA /* NavigatorView.swift */,
 				593C18332B7672D2002097CA /* Authorization */,
 				593C18342B7672FA002097CA /* CoffeeList */,
@@ -119,6 +129,8 @@
 			children = (
 				593C18402B77C063002097CA /* AuthorizationView.swift */,
 				593C18382B76746D002097CA /* RegistrationView.swift */,
+				F3BA70092B7BC74C00015711 /* Process Response.swift */,
+				F3BA700B2B7BC78400015711 /* Errors.swift */,
 			);
 			path = Authorization;
 			sourceTree = "<group>";
@@ -289,9 +301,13 @@
 				59AE0B832B78D8FC00108522 /* LoginData.swift in Sources */,
 				593C18482B77F0C9002097CA /* PasswordUI.swift in Sources */,
 				590DA3662B7AD871006BD586 /* BuyListItemUI.swift in Sources */,
+				F3BA700E2B7BC80400015711 /* Request.swift in Sources */,
 				593C18272B76726A002097CA /* NavigatorView.swift in Sources */,
 				59AE0B7E2B7825CA00108522 /* CoffeeListView.swift in Sources */,
 				593C183C2B767C2E002097CA /* UINavigationBar_Ex.swift in Sources */,
+				F3BA700A2B7BC74C00015711 /* Process Response.swift in Sources */,
+				F3BA700C2B7BC78400015711 /* Errors.swift in Sources */,
+				F3BA70102B7BC99E00015711 /* Pretty JSON.swift in Sources */,
 				59AE0B8F2B78DEB800108522 /* MockData.swift in Sources */,
 				59AE0B872B78DA2500108522 /* LocationMenuRespond.swift in Sources */,
 				593C18252B76726A002097CA /* CoffeeCApp.swift in Sources */,

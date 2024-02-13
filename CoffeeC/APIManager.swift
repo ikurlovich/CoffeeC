@@ -12,7 +12,7 @@ final class APIManager {
     static let shared = APIManager()
     private let baseURL = "http://147.78.66.203:3210"
     
-    private init() {}
+    init() {}
     
     func login(loginData: LoginData, completion: @escaping (Result<AuthResponse, Error>) -> Void) {
         let url = "\(baseURL)/auth/login"
@@ -56,18 +56,32 @@ final class APIManager {
         }
     }
     
-    func getLocations(completion: @escaping (Result<[LocationRespond], Error>) -> Void) {
-        let url = "\(baseURL)/locations"
-        
-        AF.request(url).responseDecodable(of: [LocationRespond].self) { response in
-            switch response.result {
-            case .success(let locationRespond):
-                completion(.success(locationRespond))
-                
-            case .failure(let error):
-                completion(.failure(error))
-            }
+    func getLocations(printResponse: Bool = false, completion: @escaping (Result<[LocationRespond]?, Error>) -> Void) {
+        guard let request = URLRequest(path: "locations") else {
+            return
         }
+        
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if printResponse {
+                prettyJSON(data)
+            }
+            
+            completion(processResponse(data, response, error))
+        }
+        .resume()
     }
+    
+    //    func getLocations(completion: @escaping (Result<[LocationRespond], Error>) -> Void) {
+    //        let url = "\(baseURL)/locations"
+    //
+    //        AF.request(url).responseDecodable(of: [LocationRespond].self) { response in
+    //            switch response.result {
+    //            case .success(let locationRespond):
+    //                completion(.success(locationRespond))
+    //
+    //            case .failure(let error):
+    //                completion(.failure(error))
+    //            }
+    //        }
+    //    }
 }
-
