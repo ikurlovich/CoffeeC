@@ -56,6 +56,21 @@ final class APIManager {
         }
     }
     
+    func getLocationMenu(id: Int, printResponse: Bool = false, completion: @escaping (Result<[LocationMenuRespond]?, Error>) -> Void) {
+        guard let request = URLRequest(path: "location/\(id)/menu") else {
+            return
+        }
+        
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if printResponse {
+                prettyJSON(data)
+            }
+            
+            completion(processResponse(data, response, error))
+        }
+        .resume()
+    }
+    
     func getLocations(printResponse: Bool = false, completion: @escaping (Result<[LocationRespond]?, Error>) -> Void) {
         guard let request = URLRequest(path: "locations") else {
             return

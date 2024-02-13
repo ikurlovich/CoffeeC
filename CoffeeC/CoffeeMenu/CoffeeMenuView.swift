@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CoffeeMenuView: View {
-    @StateObject var vm = CoffeeVM()
+    @StateObject var vm = CoffeeMenuVM()
     
     @State private var isButtonPressed = false
     @State private var numberOfCups = 0
@@ -18,15 +18,25 @@ struct CoffeeMenuView: View {
         GridItem(.flexible())
     ]
     
+    private let id: Int
+    
+    init(_ id: Int) {
+        self.id = id
+    }
+    
     var body: some View {
         VStack {
             ScrollView {
                 LazyVGrid(columns: columns, spacing: 20) {
-                    ForEach(vm.coffeeMenuMock) { coffee in
+                    ForEach(vm.menu, id: \.id) { coffee in
                         VStack(spacing: 0) {
-                            Image(coffee.imageURL)
-                                .resizable()
-                                .scaledToFill()
+                            AsyncImage(url: URL(string: coffee.imageURL)) { image in
+                                image
+                                    .resizable()
+                                    .scaledToFill()
+                            } placeholder: {
+                                ProgressView()
+                            }
                             
                             ZStack {
                                 Rectangle()
@@ -99,6 +109,9 @@ struct CoffeeMenuView: View {
         .navigationDestination(isPresented: $isButtonPressed) {
             CoffeePayView(vm: vm)
         }
+        .task {
+            vm.getLocationMenu(id: id)
+        }
     }
     
     private func goToNextPage() {
@@ -109,7 +122,7 @@ struct CoffeeMenuView: View {
 
 #Preview {
     NavigationStack {
-        CoffeeMenuView()
+        CoffeeMenuView(0)
     }
 }
 

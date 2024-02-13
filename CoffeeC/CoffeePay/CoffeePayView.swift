@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CoffeePayView: View {
-    @ObservedObject var vm: CoffeeVM
+    @ObservedObject var vm: CoffeeMenuVM
     
     @State private var showsAlert = false
     @State private var alertTitle = ""
@@ -20,7 +20,7 @@ struct CoffeePayView: View {
                 Spacer()
                     .frame(height: 15)
                 
-                ForEach(vm.coffeeMenuMock, id: \.id) { coffee in
+                ForEach(vm.menu, id: \.id) { coffee in
                     if let orderCount = vm.coffeeOrderCount[coffee.name], orderCount > 0 {
                         BuyListItemUI(
                             name: coffee.name,
@@ -47,7 +47,7 @@ struct CoffeePayView: View {
     }
     
     private func makeOrder() {
-        let total = vm.coffeeMenuMock.reduce(0) { sum, coffee in
+        let total = vm.menu.reduce(0) { sum, coffee in
             let count = vm.coffeeOrderCount[coffee.name, default: 0]
             return sum + Int(coffee.price * Int32(count))
         }
@@ -66,7 +66,7 @@ struct CoffeePayView: View {
 
 #Preview {
     NavigationStack {
-        let viewModel = CoffeeVM()
+        let viewModel = CoffeeMenuVM()
         CoffeePayView(vm: viewModel)
     }
 }

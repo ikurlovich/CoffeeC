@@ -37,9 +37,9 @@ struct CoffeeMapView: View {
 //            }
         }
         .arrowToolBarUI(name: "Карта")
-        .navigationDestination(isPresented: $isButtonPressed) {
-            CoffeeMenuView()
-        }
+//        .navigationDestination(isPresented: $isButtonPressed) {
+//            CoffeeMenuView()
+//        }
     }
     
     private func tapToMarker() {
