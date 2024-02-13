@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="58px" height="58px" viewBox="0 0 58 58" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <g id="Group">
+    <path d="M0 29C0 12.9837 12.9837 0 29 0C45.0163 0 58 12.9837 58 29C58 45.0163 45.0163 58 29 58C12.9837 58 0 45.0163 0 29Z" id="Круг" fill="#342D1A" fill-rule="evenodd" stroke="none" />
+  </g>
+  <path d="M20 27.75L37.5 27.75L37.5 24L20 24L20 27.75L20 27.75Z" id="Фигура" fill="none" stroke="#F6E5D1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+  <g id="Группа" transform="translate(22 28)">
+    <path d="M13.75 0L11.875 12.5" id="Линия" fill="none" fill-rule="evenodd" stroke="#F6E5D1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M11.875 12.5L1.875 12.5" id="Линия" fill="none" fill-rule="evenodd" stroke="#F6E5D1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M1.875 12.5L0 0" id="Линия" fill="none" fill-rule="evenodd" stroke="#F6E5D1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+  <path d="M22 23.75L22 22.5C22 21.837 22.2634 21.2011 22.7322 20.7322C23.2011 20.2634 23.837 20 24.5 20L34.5 20C35.163 20 35.7989 20.2634 36.2678 20.7322C36.7366 21.2011 37 21.837 37 22.5L37 23.75" id="Фигура" fill="none" stroke="#F6E5D1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+  <g id="Группа" transform="translate(32 18)">
+    <path d="M1 2.5L1 0" id="Линия" fill="none" fill-rule="evenodd" stroke="#F6E5D1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+</svg>
