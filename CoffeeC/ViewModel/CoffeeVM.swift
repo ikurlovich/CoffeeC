@@ -30,7 +30,7 @@ final class CoffeeVM: ObservableObject {
     }
     
     init() {
-        self.coffeeOrderCount = UserDefaults.standard.dictionary(forKey: "coffeeOrderCount") as? [String: Int] ?? [:]
+        coffeeOrderCount = UserDefaults.standard.dictionary(forKey: "coffeeOrderCount") as? [String: Int] ?? [:]
     }
     
     func addCoffeeToOrder(coffeeName: String) {
