@@ -42,7 +42,6 @@ struct AuthorizationView: View {
 //        }
         isButtonPressed = true
     }
-
 }
 
 #Preview {
