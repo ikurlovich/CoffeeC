@@ -2,6 +2,7 @@ import SwiftUI
 
 struct CoffeeListView: View {
     @StateObject var vm = CoffeeVM()
+    @State private var isButtonPressed = false
     
     var body: some View {
         VStack {
@@ -18,10 +19,8 @@ struct CoffeeListView: View {
                 }
             }
             
-            UniversalButtonUI("Выйти") {
-                withAnimation {
-                    NavigatorView().token = ""
-                }
+            UniversalButtonUI("На карте") {
+                isButtonPressed = true
             }
             .padding(.horizontal, 20)
         }
@@ -32,6 +31,9 @@ struct CoffeeListView: View {
             vm.getLocations()
         }
         .arrowToolBarUI(name: "Ближайшие кофейни")
+        .navigationDestination(isPresented: $isButtonPressed) {
+            CoffeeMapView()
+        }
     }
 }
 

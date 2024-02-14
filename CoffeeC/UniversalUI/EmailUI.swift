@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct EmailUI: View {
+    @State private var isValidEmail = true
     @Binding var email: String
     
     var body: some View {
@@ -13,17 +14,25 @@ struct EmailUI: View {
             }
             
             HStack() {
-                TextField("example@example", text: $email)
+                TextField("example@example", text: $email, onEditingChanged: { _ in
+                    isValidEmail = validateEmail(email: email)
+                })
                     .padding()
                     .foregroundStyle(.accent)
                     .textContentType(.emailAddress)
                     .keyboardType(.emailAddress)
                     .overlay(
                         RoundedRectangle(cornerRadius: 30)
-                            .stroke(.accent, lineWidth: 2)
+                            .stroke(isValidEmail || email.isEmpty ? .accent : .red, lineWidth: 2)
                     )
             }
         }
+    }
+    
+    func validateEmail(email: String) -> Bool {
+        let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegex)
+        return emailTest.evaluate(with: email)
     }
 }
 

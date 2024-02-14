@@ -8,7 +8,9 @@ final class CoffeeVM: ObservableObject {
             switch result {
             case .success(let model):
                 if let model {
-                    self.coffeeShopsMock = model
+                    DispatchQueue.main.async {
+                        self.coffeeShopsMock = model
+                    }
                 }
                 
             case .failure(let error):

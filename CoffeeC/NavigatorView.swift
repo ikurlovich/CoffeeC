@@ -9,13 +9,9 @@ struct NavigatorView: View {
     
     var body: some View {
         NavigationStack {
-            if token.isEmpty {
-                AuthorizationView()
-                    .navigationTitle("Вход")
-                    .toolbarTitleDisplayMode(.inline)
-            } else {
-                CoffeeListView()
-            }
+            AuthorizationView()
+                .navigationTitle("Вход")
+                .toolbarTitleDisplayMode(.inline)
         }
         .navigationViewStyle(.stack)
     }

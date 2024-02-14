@@ -5,6 +5,10 @@ struct AuthorizationView: View {
     @State private var password = ""
     @State private var isButtonPressed = false
     
+    @State private var showsAlert = false
+    @State private var alertTitle = ""
+    @State private var alertMessage = ""
+    
     var body: some View {
         VStack(spacing: 20) {
             EmailUI(email: $email)
@@ -26,6 +30,13 @@ struct AuthorizationView: View {
         .navigationDestination(isPresented: $isButtonPressed) {
             CoffeeListView()
         }
+        .alert(isPresented: $showsAlert) {
+            Alert(
+                title: Text(alertTitle),
+                message: Text(alertMessage),
+                dismissButton: .default(Text("OK") )
+            )
+        }
     }
     
     private func entryAccount() {
@@ -39,8 +50,13 @@ struct AuthorizationView: View {
                     NavigatorView().token = authResponse.token
                 }
                 
+                isButtonPressed = true
             case .failure(let error):
                 print("Login failed with error: \(error)")
+                
+                alertTitle = "Ошибка входа"
+                alertMessage = "Пожалуйста проверьте правильность введённых данных"
+                showsAlert = true
             }
         }
     }

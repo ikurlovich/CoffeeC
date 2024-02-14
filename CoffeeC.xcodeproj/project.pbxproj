@@ -33,6 +33,7 @@
 		59AE0B8F2B78DEB800108522 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AE0B8E2B78DEB800108522 /* MockData.swift */; };
 		59AE0B912B78E3C300108522 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AE0B902B78E3C300108522 /* APIManager.swift */; };
 		59AE0B942B78E3EE00108522 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 59AE0B932B78E3EE00108522 /* Alamofire */; };
+		59F1D53D2B7C321300981060 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 59F1D53C2B7C321300981060 /* Kingfisher */; };
 		F3BA700A2B7BC74C00015711 /* Process Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BA70092B7BC74C00015711 /* Process Response.swift */; };
 		F3BA700C2B7BC78400015711 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BA700B2B7BC78400015711 /* Errors.swift */; };
 		F3BA700E2B7BC80400015711 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BA700D2B7BC80400015711 /* Request.swift */; };
@@ -80,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59F1D53D2B7C321300981060 /* Kingfisher in Frameworks */,
 				59AE0B942B78E3EE00108522 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -231,6 +233,7 @@
 			name = CoffeeC;
 			packageProductDependencies = (
 				59AE0B932B78E3EE00108522 /* Alamofire */,
+				59F1D53C2B7C321300981060 /* Kingfisher */,
 			);
 			productName = CoffeeC;
 			productReference = 593C18212B76726A002097CA /* CoffeeC.app */;
@@ -262,6 +265,7 @@
 			mainGroup = 593C18182B76726A002097CA;
 			packageReferences = (
 				59AE0B922B78E3EE00108522 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				59F1D53B2B7C321300981060 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 593C18222B76726A002097CA /* Products */;
 			projectDirPath = "";
@@ -454,6 +458,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CoffeeC/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CoffeeC;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "\"Please allow us to access your geo-location for a list of available coffee shops in the vicinity.\"";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -474,7 +480,7 @@
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -490,6 +496,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CoffeeC/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CoffeeC;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "\"Please allow us to access your geo-location for a list of available coffee shops in the vicinity.\"";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -510,7 +518,7 @@
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -546,6 +554,14 @@
 				minimumVersion = 5.8.1;
 			};
 		};
+		59F1D53B2B7C321300981060 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher?ysclid=lskzr2ue3x911990346";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.11.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -553,6 +569,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 59AE0B922B78E3EE00108522 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		59F1D53C2B7C321300981060 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 59F1D53B2B7C321300981060 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

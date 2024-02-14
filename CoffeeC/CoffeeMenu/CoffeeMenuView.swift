@@ -1,4 +1,5 @@
 import SwiftUI
+import Kingfisher
 
 struct CoffeeMenuView: View {
     @StateObject var vm = CoffeeMenuVM()
@@ -18,85 +19,84 @@ struct CoffeeMenuView: View {
     }
     
     var body: some View {
-        VStack {
-            ScrollView {
-                LazyVGrid(columns: columns, spacing: 20) {
-                    ForEach(vm.menu, id: \.id) { coffee in
-                        VStack(spacing: 0) {
-                            AsyncImage(url: URL(string: coffee.imageURL)) { image in
-                                image
+        GeometryReader { geometry in
+            VStack {
+                ScrollView {
+                    LazyVGrid(columns: columns, spacing: 20) {
+                        ForEach(vm.menu, id: \.id) { coffee in
+                            VStack(spacing: 0) {
+                                KFImage(URL(string: coffee.imageURL)!)
                                     .resizable()
-                                    .scaledToFit()
-                            } placeholder: {
-                                ProgressView()
-                            }
-                            
-                            ZStack {
-                                Rectangle()
-                                    .frame(height: 70)
-                                    .foregroundStyle(.menuBack)
+                                    .frame(width: geometry.size.width / 2 - 20, height: geometry.size.width / 2 - 50, alignment: .center)
                                 
-                                VStack {
-                                    HStack {
-                                        Spacer()
-                                            .frame(width: 10)
-                                        
-                                        Text(coffee.name)
-                                            .foregroundStyle(.accent)
-                                        
-                                        Spacer()
-                                    }
+                                ZStack {
+                                    Rectangle()
+                                        .frame(height: 70)
+                                        .foregroundStyle(.menuBack)
                                     
-                                    HStack {
-                                        Spacer()
-                                            .frame(width: 10)
-                                        
-                                        Text("\((coffee.price)) руб")
-                                            .fontWeight(.bold)
-                                            .foregroundStyle(.accent)
-                                        
-                                        Spacer()
-                                        
+                                    VStack {
                                         HStack {
-                                            ZStack {
-                                                Rectangle()
-                                                    .frame(width: 20, height: 20)
-                                                    .foregroundStyle(.menuBack)
-                                                
-                                                Image(systemName: "minus")
-                                            }
-                                            .onTapGesture {
-                                                vm.removeCoffeeFromOrder(coffeeName: coffee.name)
-                                            }
-                                            
-                                            Text("\(vm.coffeeOrderCount[coffee.name, default: 0])")
-                                                .foregroundStyle(.accent)
-                                                .fixedSize(horizontal: true, vertical: false)
-                                            
-                                            Image(systemName: "plus")
-                                                .onTapGesture {
-                                                    vm.addCoffeeToOrder(coffeeName: coffee.name)
-                                                }
-                                            
                                             Spacer()
                                                 .frame(width: 10)
+                                            
+                                            Text(coffee.name.count > 15 ? "Просто кофе" : coffee.name)
+                                                .foregroundStyle(.accent)
+                                            
+                                            Spacer()
                                         }
-                                        .foregroundStyle(.buttonText)
+                                        
+                                        HStack {
+                                            Spacer()
+                                                .frame(width: 10)
+                                            
+                                            Text("\((coffee.price)) руб")
+                                                .fontWeight(.bold)
+                                                .foregroundStyle(.accent)
+                                            
+                                            Spacer()
+                                            
+                                            HStack {
+                                                ZStack {
+                                                    Rectangle()
+                                                        .frame(width: 20, height: 20)
+                                                        .foregroundStyle(.menuBack)
+                                                    
+                                                    Image(systemName: "minus")
+                                                }
+                                                .onTapGesture {
+                                                    vm.removeCoffeeFromOrder(coffeeName: coffee.name)
+                                                }
+                                                
+                                                Text("\(vm.coffeeOrderCount[coffee.name, default: 0])")
+                                                    .foregroundStyle(.accent)
+                                                    .fixedSize(horizontal: true, vertical: false)
+                                                
+                                                Image(systemName: "plus")
+                                                    .onTapGesture {
+                                                        vm.addCoffeeToOrder(coffeeName: coffee.name)
+                                                    }
+                                                
+                                                Spacer()
+                                                    .frame(width: 10)
+                                            }
+                                            .foregroundStyle(.buttonText)
+                                        }
                                     }
                                 }
                             }
+                            .frame(width: geometry.size.width / 2 - 20, height: geometry.size.width / 2 + 20, alignment: .center)
+                            .clipShape(.rect(cornerRadius: 15))
+                            .shadow(color: .shadow, radius: 2, x: 0.0, y: 3)
                         }
-                        .clipShape(.rect(cornerRadius: 15))
-                        .shadow(color: .shadow, radius: 2, x: 0.0, y: 3)
                     }
+                    .padding()
                 }
-                .padding()
+                
+                UniversalButtonUI("Перейти к оплате") {
+                    goToNextPage()
+                }
+                .padding(.horizontal, 20)
             }
-            
-            UniversalButtonUI("Перейти к оплате") {
-                goToNextPage()
-            }
-            .padding(.horizontal, 20)
         }
         .arrowToolBarUI(name: "Меню")
         .navigationDestination(isPresented: $isButtonPressed) {

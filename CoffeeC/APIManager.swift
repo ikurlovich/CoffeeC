@@ -35,19 +35,19 @@ final class APIManager {
         }
     }
     
-    func getLocationMenu(id: String, completion: @escaping (Result<[LocationMenuRespond], Error>) -> Void) {
-        let url = "\(baseURL)/location/\(id)/menu"
-        
-        AF.request(url).responseDecodable(of: [LocationMenuRespond].self) { response in
-            switch response.result {
-            case .success(let locationMenuRespond):
-                completion(.success(locationMenuRespond))
-                
-            case .failure(let error):
-                completion(.failure(error))
-            }
-        }
-    }
+//    func getLocationMenu(id: String, completion: @escaping (Result<[LocationMenuRespond], Error>) -> Void) {
+//        let url = "\(baseURL)/location/\(id)/menu"
+//        
+//        AF.request(url).responseDecodable(of: [LocationMenuRespond].self) { response in
+//            switch response.result {
+//            case .success(let locationMenuRespond):
+//                completion(.success(locationMenuRespond))
+//                
+//            case .failure(let error):
+//                completion(.failure(error))
+//            }
+//        }
+//    }
     
     func getLocationMenu(id: Int, printResponse: Bool = false, completion: @escaping (Result<[LocationMenuRespond]?, Error>) -> Void) {
         guard let request = URLRequest(path: "location/\(id)/menu") else {

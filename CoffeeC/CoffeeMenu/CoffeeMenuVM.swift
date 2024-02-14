@@ -28,7 +28,9 @@ final class CoffeeMenuVM: ObservableObject {
             switch result {
             case .success(let model):
                 if let model {
-                    self.menu = model
+                    DispatchQueue.main.async {
+                        self.menu = model
+                    }
                 }
                 
             case .failure(let error):
